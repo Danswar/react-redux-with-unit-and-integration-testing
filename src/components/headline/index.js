@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-export default class Headline extends Component {
+class Headline extends Component {
   render() {
     const { header, desc } = this.props;
     if (!header) return null;
@@ -13,3 +14,19 @@ export default class Headline extends Component {
     );
   }
 }
+
+Headline.propTypes = {
+  header: PropTypes.string,
+  desc: PropTypes.string,
+  tempArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      fName: PropTypes.string,
+      lName: PropTypes.string,
+      email: PropTypes.string,
+      age: PropTypes.number,
+      statusOnline: PropTypes.bool
+    })
+  )
+};
+
+export default Headline;
