@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React and Redux app with Unit and Integration testing
+
+this is an app to show some methods to test React|Redux apps using Enzime and Jest
 
 ## Available Scripts
 
