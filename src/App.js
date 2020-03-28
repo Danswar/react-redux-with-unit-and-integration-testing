@@ -18,32 +18,55 @@ const tempArray = [
   }
 ];
 
-function App({ posts, fetchPost }) {
-  const fetch = () => {
-    fetchPost();
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hideBtn: false
+    };
+  }
+
+  toggleButton = () => {
+    this.setState({
+      hideBtn: !this.state.hideBtn
+    });
   };
 
-  return (
-    <div className="App" data-test="appComponent">
-      <Header />
-      <section className="main">
-        <Headline
-          header="Posts"
-          desc="Click the button to render post!"
-          tempArray={tempArray}
-        />
-        <ShareButton buttonText="Get Post" emitEvent={fetch} />
-        {posts.length > 0 && (
-          <div>
-            {posts.map((post, index) => {
-              const { title, body } = post;
-              return <ListItem title={title} desc={body} key={index} />;
-            })}
-          </div>
-        )}
-      </section>
-    </div>
-  );
+  fetch = () => {
+    this.props.fetchPost();
+    this.toggleButton();
+  };
+
+  exampleMethod = value => {
+    return value;
+  };
+
+  render() {
+    return (
+      <div className="App" data-test="appComponent">
+        <Header />
+        <section className="main">
+          <Headline
+            header="Posts"
+            desc="Click the button to render post!"
+            tempArray={tempArray}
+          />
+          {!this.state.hideBtn && (
+            <ShareButton buttonText="Get Post" emitEvent={fetch} />
+          )}
+
+          {this.props.posts.length > 0 && (
+            <div>
+              {this.props.posts.map((post, index) => {
+                const { title, body } = post;
+                return <ListItem title={title} desc={body} key={index} />;
+              })}
+            </div>
+          )}
+        </section>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = store => {

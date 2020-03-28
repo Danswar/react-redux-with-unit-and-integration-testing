@@ -37,4 +37,17 @@ describe("App component", () => {
     const component = findByTestAtrr(wrapper, "appComponent");
     expect(component.length).toBe(1);
   });
+
+  it("Should change the state when toggleButton is call", () => {
+    const classInstance = wrapper.instance();
+    classInstance.toggleButton();
+    const newState = classInstance.state.hideBtn;
+    expect(newState).toBe(true);
+  });
+
+  it("Function exampleMethod should return correct value", () => {
+    const classInstance = wrapper.instance();
+    const returnedValue = classInstance.exampleMethod(6);
+    expect(returnedValue).toBe(6);
+  });
 });

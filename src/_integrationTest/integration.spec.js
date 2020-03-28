@@ -1,6 +1,6 @@
 import moxios from "moxios";
 import { testStore } from "../../Utils";
-import { fetchPost } from "../actions";
+import { fetchPost } from "./../actions";
 
 describe("fetchPost Actions", () => {
   beforeEach(() => {

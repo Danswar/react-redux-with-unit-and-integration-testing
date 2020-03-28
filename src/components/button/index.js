@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SharedButton = ({ buttonText }) => {
+const SharedButton = ({ buttonText, emitEvent }) => {
   const submitEvent = () => {
-    if (this.props.emitEvent) {
-      this.props.emitEvent();
+    if (emitEvent) {
+      emitEvent();
     }
   };
 
