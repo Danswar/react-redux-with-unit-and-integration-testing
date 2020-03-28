@@ -37,7 +37,7 @@ function App({ posts, fetchPost }) {
           <div>
             {posts.map((post, index) => {
               const { title, body } = post;
-              return <ListItem title={title} desc={body} />;
+              return <ListItem title={title} desc={body} key={index} />;
             })}
           </div>
         )}
