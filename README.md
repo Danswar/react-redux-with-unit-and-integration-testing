@@ -1,6 +1,14 @@
-# React and Redux app with Unit and Integration testing
+# React | Redux con test unitarios y de integración
 
-this is an app to show some methods to test React|Redux apps using Enzime and Jest
+En este repositorio se encuentran ejemplos de como usar las librerías Jest y Enzyme para implementar:
+
+- Pruebas unitarias sobre componentes Funcionales y de Clase.
+- Pruebas sobre PropTypes.
+- Testear eventos.
+- Mockear llamadas al servidor.
+- Testear acciones asíncronas.
+- Pruebas de integración del store y las actions (Redux).
+- Testear componentes conectados con la store.
 
 ## Available Scripts
 
